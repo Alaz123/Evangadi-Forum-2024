@@ -10,13 +10,14 @@ const dbConnection = mysql.createPool({
 });
 
 // Execute a SQL query
-dbConnection.execute("SELECT 'test' ", (err, result) => {
-	if (err) {
-		console.error("Error executing the query:", err.message);
-	} else {
-		console.log("Query result:", result);
-	}
-});
+// dbConnection.execute("SELECT 'test' ", (err, result) => {
+// 	if (err) {
+// 		console.error("Error executing the query:", err.message);
+// 	} else {
+// 		console.log("Query result:", result);
+// 	}
+// });
 
 // Close the connection pool when done
 // dbConnection.end();
+module.exports = dbConnection.promise();
